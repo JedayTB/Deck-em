@@ -19,7 +19,6 @@ public class ThrowingCard : MonoBehaviour
 
   void OnTriggerEnter(Collider other)
   {
-    print($"triggered {other.name}");
     if (other.gameObject.CompareTag("Player"))
     {
       print("hit player");

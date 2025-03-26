@@ -92,7 +92,9 @@ public class PlayerController : A_Entity
     }
     catch (System.Exception e)
     {
+      string msg = e.Message;
       print("Player card stack empty");
+      
     }
 
   }

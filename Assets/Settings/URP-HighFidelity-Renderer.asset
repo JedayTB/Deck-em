@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  injectionPoint: 550
+  injectionPoint: 450
   fetchColorBuffer: 1
   requirements: 4
   passMaterial: {fileID: 2100000, guid: bff9e71895a84dd3bbfb7cbd56453df6, type: 2}

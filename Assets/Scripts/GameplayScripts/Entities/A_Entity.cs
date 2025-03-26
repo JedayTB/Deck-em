@@ -8,6 +8,12 @@ public abstract class A_Entity : MonoBehaviour
   public Rigidbody RigidBody { get { return rb; } }
   [SerializeField] protected GameObject entityBody;
 
+  [Header("RPG Things")]
+  public int health = 3;
+  public int baseHealth = 3;
+  [SerializeField] private int damage = 1;
+
+
   [Header("Movement Variables")]
   [SerializeField] protected float moveSpeed = 5f;
   [SerializeField] protected float accelerateDrag = 1.5f;
