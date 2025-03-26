@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class PlayerController : A_Entity
 {
   [Header("Player Specifics")]
   [SerializeField] Camera cam;
+  public Vector3 camForward { get { return cam.transform.forward; } }
   [SerializeField] float pitchAngle;
   [SerializeField] float yawAngle;
 
@@ -14,6 +14,7 @@ public class PlayerController : A_Entity
   [SerializeField] float cameraPitchSensitivity = 5f;
 
   [SerializeField] float maxPitchAngle = 70f;
+  [SerializeField] KeyCode JumpKey = KeyCode.Space;
   [Header("Card Settings")]
   Stack<A_Card> currentCards;
   public Stack<A_Card> PlayerCards { get { return currentCards; } }
@@ -29,7 +30,6 @@ public class PlayerController : A_Entity
   {
     Init();
   }
-  // Update is called once per frame
   void Update()
   {
     handleInput();
@@ -68,6 +68,11 @@ public class PlayerController : A_Entity
     moveDirection += hAxis * moveSpeed * cam.transform.right;
     moveDirection.Normalize();
 
+    if (Input.GetKeyDown(JumpKey) && isGrounded)
+    {
+      print("Jump");
+      Jump();
+    }
     //Card stuff
     if (Input.GetMouseButtonDown(1))
     {
@@ -87,7 +92,7 @@ public class PlayerController : A_Entity
     }
     catch (System.Exception e)
     {
-      print("Player stack empty");
+      print("Player card stack empty");
     }
 
   }

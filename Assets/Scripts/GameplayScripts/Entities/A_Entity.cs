@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -12,17 +10,18 @@ public abstract class A_Entity : MonoBehaviour
 
   [Header("Movement Variables")]
   [SerializeField] protected float moveSpeed = 5f;
-
   [SerializeField] protected float accelerateDrag = 1.5f;
   [SerializeField] protected float stoppingDrag = 5f;
   [SerializeField] protected float airborneDrag = 0.5f;
-
   [SerializeField] protected float maxSpeed = 10f;
+  [Space(15)]
+  [SerializeField] protected float jumpForce = 200f;
 
   [Header("Raycast information")]
   [SerializeField] protected LayerMask groundLayers;
   [SerializeField] protected float boxCastBounds = 0.5f;
   [SerializeField] protected float raycastLength = 0.5f;
+  protected RaycastHit boxcastHit;
   protected bool isGrounded = true;
   [SerializeField] protected Vector3 moveDirection;
 
@@ -39,7 +38,7 @@ public abstract class A_Entity : MonoBehaviour
   protected virtual void CheckGrounded()
   {
     Vector3 bounds = new(boxCastBounds, boxCastBounds, boxCastBounds);
-    isGrounded = Physics.BoxCast(transform.position, bounds, Vector3.down, Quaternion.identity, raycastLength, groundLayers);
+    isGrounded = Physics.BoxCast(transform.position, bounds, Vector3.down, out boxcastHit, Quaternion.identity, raycastLength, groundLayers);
     Debug.DrawRay(transform.position, Vector3.down * raycastLength, isGrounded == true ? Color.green : Color.red);
   }
   protected virtual void ChangeRBDrag()
@@ -57,6 +56,10 @@ public abstract class A_Entity : MonoBehaviour
       rb.drag = airborneDrag;
     }
   }
+  protected virtual void Jump()
+  {
+    RigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+  }
   protected virtual void AccelerateRB()
   {
     // If modeDirection isn't normalized yet, do it again
@@ -69,5 +72,8 @@ public abstract class A_Entity : MonoBehaviour
     vel.x = Mathf.Clamp(vel.x, -maxSpeed, maxSpeed);
     vel.y = Mathf.Clamp(vel.y, -maxSpeed, maxSpeed);
     vel.z = Mathf.Clamp(vel.z, -maxSpeed, maxSpeed);
+  }
+  void OnDrawGizmos()
+  {
   }
 }
