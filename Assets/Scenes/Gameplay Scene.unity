@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3a06993617e8a132dada31770fee7b1e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -787,7 +787,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.784609
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -802,7 +802,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -967,13 +967,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.014186857, y: 0.905797, z: -0.42238012, w: 0.030424062}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 176.153, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1031,7 @@ Transform:
   - {fileID: 1336129418}
   - {fileID: 1492671561}
   - {fileID: 119748723}
+  - {fileID: 1634856699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546693968
@@ -3026,7 +3027,7 @@ GameObject:
   - component: {fileID: 1634856696}
   - component: {fileID: 1634856695}
   - component: {fileID: 1634856694}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3358,12 +3359,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634856693}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -56.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.706286, y: -1.4566797, z: -50.74229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 518937271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1918399752
 Mesh:
@@ -4052,7 +4053,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
-  boxCastBounds: 1
+  boxCastBounds: 0.5
   raycastLength: 1.05
   moveDirection: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
@@ -4199,6 +4200,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 110228926141498992, guid: d8579385882fcfa30a53852499c6588d,
         type: 3}
+    - target: {fileID: 5491131802261875966, guid: b424bfc4981a997699fadbbea5a34f3d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ad74d45dd614b8eaa3da19dd4dd2492, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4216,6 +4222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dash Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 637305230302892012, guid: 4dc4d910170565e23b09f3a64e536927,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.027
       objectReference: {fileID: 0}
     - target: {fileID: 1267725274236830518, guid: 4dc4d910170565e23b09f3a64e536927,
         type: 3}
@@ -4267,11 +4278,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4421733163486047273, guid: 4dc4d910170565e23b09f3a64e536927,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455757299229019118, guid: 4dc4d910170565e23b09f3a64e536927,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7455757299229019118, guid: 4dc4d910170565e23b09f3a64e536927,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4452202021720480351}
   m_SourcePrefab: {fileID: 100100000, guid: 4dc4d910170565e23b09f3a64e536927, type: 3}
+--- !u!1 &4452202021720480350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7455757299229019118, guid: 4dc4d910170565e23b09f3a64e536927,
+    type: 3}
+  m_PrefabInstance: {fileID: 4452202021720480349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4452202021720480351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4452202021720480350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4285,5 +4339,4 @@ SceneRoots:
   - {fileID: 3822818089531264634}
   - {fileID: 4452202021720480349}
   - {fileID: 518937271}
-  - {fileID: 1634856699}
   - {fileID: 3896453487179192387}
